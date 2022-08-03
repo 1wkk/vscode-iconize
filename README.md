@@ -27,6 +27,10 @@ Customizable inline icon 💗 preview for VS Code
 - Auto completions for iconsets
 - [customize docs](./docs.md)
 
+### THX
+
+- [antfu](https://antfu.me/)
+
 ## License
 
 [MIT](./LICENSE) License © 2022 [Yurika Xu](https://github.com/echoeureka)
