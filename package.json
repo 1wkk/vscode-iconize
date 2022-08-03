@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@7.5.1",
-  "description": "",
+  "description": "Customizable inline icon 💗 preview for VS Code",
   "author": "Yurika Xu <iherewithmyheart@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/echoeureka/vscode-iconize#readme",
@@ -17,7 +17,9 @@
     "url": "https://github.com/echoeureka/vscode-iconize/issues"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Visualization",
+    "Snippets"
   ],
   "main": "./dist/index.js",
   "icon": "res/icon.png",
@@ -28,8 +30,34 @@
     "vscode": "^1.69.0"
   },
   "activationEvents": [
-    "onStartupFinished"
+    "workspaceContains:package.json",
+    "onLanguage:html"
   ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "snippets/html.json"
+      }
+    ],
+    "configuration":{
+      "title": "iconize",
+      "properties": {
+        "iconize.collection":{
+          "type": "string",
+          "default": "ex"
+        },
+        "iconize.delimiter":{
+          "type": "string",
+          "default": "-"
+        },
+        "iconize.collectionApi":{
+          "type": "string",
+          "default": "" 
+        }
+      }
+    }
+  },
   "scripts": {
     "build": "tsup src/index.ts --external vscode",
     "dev": "nr build --watch",
@@ -47,9 +75,11 @@
     "@babel/types": "^7.18.8",
     "@types/node": "^18.0.3",
     "@types/vscode": "^1.69.0",
+    "@vue/reactivity": "^3.2.37",
     "bumpp": "^8.2.1",
     "eslint": "^8.19.0",
     "esno": "^0.16.3",
+    "ohmyfetch": "^0.4.18",
     "pnpm": "^7.5.1",
     "rimraf": "^3.0.2",
     "tsup": "^6.1.3",
