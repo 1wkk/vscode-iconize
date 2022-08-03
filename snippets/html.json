@@ -1,0 +1,9 @@
+{
+  "iconize HTML": {
+    "prefix": "icon",
+    "body": [
+      "@TEMPLATE"
+    ],
+    "description": "iconize HTML"
+  }
+}
