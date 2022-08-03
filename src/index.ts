@@ -1,7 +1,9 @@
-import { window } from 'vscode'
+import type { ExtensionContext } from 'vscode'
 
-export function activate() {
-  window.showInformationMessage('Hello')
+import { registerDecorations } from './decorations'
+
+export function activate(context: ExtensionContext) {
+  registerDecorations(context)
 }
 
 export function deactivate() {
