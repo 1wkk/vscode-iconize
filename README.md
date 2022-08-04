@@ -25,7 +25,7 @@ Customizable inline icon 💗 preview for VS Code
 
 ### ⌛ TODO
 
-- Auto completions for iconsets
+- ✅ Auto completions for iconsets
 - [customize docs](./docs.md)
 
 ### THX
