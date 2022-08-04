@@ -22,10 +22,10 @@ Customizable inline icon 💗 preview for VS Code
 - Snippets
 - Change Icon color for Dark/Light theme
 
-
 ### ⌛ TODO
 
 - ✅ Auto completions for iconsets
+- ✅ Hover message
 - [customize docs](./docs.md)
 
 ### THX

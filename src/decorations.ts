@@ -3,6 +3,7 @@ import { DecorationRangeBehavior, Range, Uri, window, workspace } from 'vscode'
 
 import { REGEX, config, onConfigUpdated } from './config'
 import { loadIconPath } from './loader'
+import { iconMarkdown } from './markdown'
 import { isTruthy, pathToSvg, toDataUrl } from './utils'
 
 const registerDecorations = (ctx: ExtensionContext) => {
@@ -58,7 +59,7 @@ const registerDecorations = (ctx: ExtensionContext) => {
       if (!icon)
         return undefined
 
-      const dataurl = toDataUrl(pathToSvg(icon))
+      const dataurl = toDataUrl(pathToSvg(icon, config.fontSize))
 
       return {
         range,
@@ -70,7 +71,8 @@ const registerDecorations = (ctx: ExtensionContext) => {
           },
         },
         key,
-      }
+        hoverMessage: await iconMarkdown(ctx, key),
+      } as DecorationOptions
     }))).filter(isTruthy)
 
     refreshDecorations()

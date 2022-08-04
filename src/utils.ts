@@ -1,4 +1,4 @@
-import { color, config } from './config'
+import { color } from './config'
 
 /* eslint-disable eslint-comments/no-unlimited-disable */
 /* eslint-disable */
@@ -9,8 +9,8 @@ export const toDataUrl = (str: string) => {
   return `data:image/svg+xml;base64,${Base64.encode(str)}`
 }
 
-export const pathToSvg = (path: string) =>{
-  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${config.fontSize * 1.2}px" height="${config.fontSize * 1.2}px" fill="${color.value}" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">${path}</svg>`
+export const pathToSvg = (path: string, fontSize: number) =>{
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${fontSize * 1.2}px" height="${fontSize * 1.2}px" fill="${color.value}" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">${path}</svg>`
 }
 
 export const isTruthy = <T>(a: T | undefined): a is T => Boolean(a)

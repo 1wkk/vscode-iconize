@@ -2,6 +2,7 @@ import type { ExtensionContext, Position, TextDocument } from 'vscode'
 import { CompletionItem, CompletionItemKind, languages } from 'vscode'
 
 import { loadIconSet } from './loader'
+import { iconMarkdown } from './markdown'
 
 export function registerCompletions(ctx: ExtensionContext) {
   const FullProvider = languages.registerCompletionItemProvider(
@@ -15,6 +16,12 @@ export function registerCompletions(ctx: ExtensionContext) {
         const iconSet = await loadIconSet(ctx)
 
         return Object.keys(iconSet).map(key => new CompletionItem(key, CompletionItemKind.Enum))
+      },
+      async resolveCompletionItem(item: CompletionItem) {
+        return {
+          ...item,
+          documentation: await iconMarkdown(ctx, item.label as string),
+        }
       },
     },
     '"')
