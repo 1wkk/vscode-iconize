@@ -1,7 +1,7 @@
 import type { DecorationOptions, ExtensionContext, TextEditor } from 'vscode'
 import { DecorationRangeBehavior, Range, Uri, window, workspace } from 'vscode'
 
-import { REGEX, color, config, onConfigUpdated } from './config'
+import { REGEX, config, onConfigUpdated } from './config'
 import { loadIconPath } from './loader'
 import { isTruthy, pathToSvg, toDataUrl } from './utils'
 
@@ -58,7 +58,7 @@ const registerDecorations = (ctx: ExtensionContext) => {
       if (!icon)
         return undefined
 
-      const dataurl = toDataUrl(pathToSvg(icon).replace(/currentColor/g, color.value))
+      const dataurl = toDataUrl(pathToSvg(icon))
 
       return {
         range,
