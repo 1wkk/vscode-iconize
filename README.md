@@ -10,9 +10,17 @@
 <a href="https://github.com/echoeureka/vscode-iconize/issues" target="__blank"><img src="https://img.shields.io/github/issues/echoeureka/vscode-iconize.svg?color=a38eed" alt="GitHub issues" /></a>
 </p>
 
+<br/>
+
 
 <p align="center">
 Customizable inline icon 💗 preview for VS Code
+</p>
+
+<br/>
+
+<p align='center'>
+  <img src="./res/iconize.png" alt='preview'>
 </p>
 
 
@@ -28,9 +36,11 @@ Customizable inline icon 💗 preview for VS Code
 - ✅ Hover message
 - [customize docs](./docs.md)
 
-### THX
+### ❤️ THX
 
 - [antfu](https://antfu.me/)
+
+- [Xander](mailto:liuyiyang@exiao.tech) PROMOTIONAL IMAGE
 
 ## License
 
